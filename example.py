@@ -99,20 +99,15 @@ def main(
     use_int8: bool = True,
 ):
     generator = load(ckpt_dir, tokenizer_path, max_seq_len, max_batch_size, use_int8)
-
+    with open("prompt.txt") as f:
+        prompt = f.read().strip()
     prompts = [
         # For these prompts, the expected answer is the natural continuation of the prompt
-        """Welcome.
-The following conversation took place at Harvard University.
-Former Treasurer Secretary Larry Summers invited Ray Dalio, the founder, chairman and
-co-CIO of Bridgewater Associates, the world's largest hedge fund, to discuss Dalio's unique
-views on economics.
-
-Dalio:""",
+        prompt,
     ]
     results = generator.generate(
         prompts,
-        max_gen_len=1024,
+        max_gen_len=128,
         temperature=temperature,
         top_p=top_p,
         repetition_penalty_range=repetition_penalty_range,

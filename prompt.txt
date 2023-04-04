@@ -1,0 +1,15 @@
+Generate one line Python code given the question and table to answer the question correctly.
+###
+# Parse the question into Python based on the given table below.
+index = [('percent', 'canada', None), ('percent', 'canada', 'newfoundland and labrador'), ('percent', 'canada', 'prince edward island'), ('percent', 'canada', 'nova scotia'), ('percent', 'canada', 'new brunswick'), ('percent', 'canada', 'quebec'), ('percent', 'canada', 'ontario'), ('percent', 'canada', 'manitoba'), ('percent', 'canada', 'saskatchewan'), ('percent', 'canada', 'alberta'), ('percent', 'canada', 'british columbia'), ('percent', 'canada', 'yukon'), ('percent', 'canada', 'northwest territories'), ('percent', 'canada', 'nunavut')]
+columns = [('total children', 'aboriginal'), ('total children', 'non-aboriginal'), ('total children in foster care', 'aboriginal'), ('total children in foster care', 'non-aboriginal')]
+data = pd.DataFrame(data_matrix, index=index, columns=columns)
+# Q: in saskatchewan, what was the percent of all foster children aged 14 and under were aboriginal children?
+Python: data.loc[('percent', 'canada', 'saskatchewan'), ('total children in foster care', 'aboriginal')]
+###
+# Parse the question into Python based on the given table below.
+index = [('canada',), ('newfoundland and labrador',), ('prince edward island',), ('nova scotia',), ('new brunswick',), ('quebec',), ('ontario',), ('manitoba',), ('saskatchewan',), ('alberta',), ('british columbia',), ('yukon',), ('northwest territories',), ('nunavut',)]
+columns = [('2010', 'number of jobs'), ('2011', 'number of jobs'), ('2012', 'number of jobs'), ('2013', 'number of jobs'), ('2014', 'number of jobs'), ('2011', 'percentage change'), ('2012', 'percentage change'), ('2013', 'percentage change'), ('2014', 'percentage change')]
+data = pd.DataFrame(data_matrix, index=index, columns=columns)
+# Q: how many percentage points did gdp of sport industries in canada decrease in 2014?
+Python:
