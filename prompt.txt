@@ -1,4 +1,12 @@
 Generate one line Python code given the question and table to answer the question correctly.
+###
+# Write one line python pandas code to answer the question, given other skeleton code below.
+index = [('swansea city', '2001-02'), ('swansea city', 'total'), ('gillingham', '2002-03'), ('gillingham', '2003-04'), ('gillingham', '2004-05'), ('gillingham', 'total'), ('stoke city', '2005-06'), ('stoke city', '2006-07'), ('stoke city', '2007-08'), ('stoke city', '2008-09'), ('stoke city', '2009-10'), ('stoke city', '2010-11'), ('stoke city', '2011-12'), ('stoke city', '2012-13'), ('stoke city', 'total'), ('sheffield wednesday', '2012-13'), ('tranmere rovers', '2012-13'), ('cska sofia', '2013-14'), ('career total',)]
+columns = [('league', 'division'), ('league', 'apps'), ('league', 'goals'), ('fa cup', 'apps'), ('fa cup', 'goals'), ('league cup', 'apps'), ('league cup', 'goals'), ('other', 'apps'), ('other', 'goals'), ('total', 'apps'), ('total', 'goals')]
+data = pd.DataFrame(data_matrix, index=index, columns=columns)
+# Q: how many goals did mamady sidibe score for gillingham totally?
+Python: data.loc[('gillingham', 'total'), ('total', 'goals')]
+###
 # Write one line python pandas code to answer the question, given other skeleton code below.
 index = [('canada',), ('newfoundland and labrador',), ('prince edward island',), ('nova scotia',), ('new brunswick',), ('quebec',), ('ontario',), ('manitoba',), ('saskatchewan',), ('alberta',), ('british columbia',), ('yukon',), ('northwest territories',), ('nunavut',)]
 columns = [('2010', 'number of jobs'), ('2011', 'number of jobs'), ('2012', 'number of jobs'), ('2013', 'number of jobs'), ('2014', 'number of jobs'), ('2011', 'percentage change'), ('2012', 'percentage change'), ('2013', 'percentage change'), ('2014', 'percentage change')]

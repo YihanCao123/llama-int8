@@ -94,7 +94,7 @@ def main(
     repetition_penalty_range: int = 1024,
     repetition_penalty_slope: float = 0,
     repetition_penalty: float = 1.15,
-    max_seq_len: int = 512,
+    max_seq_len: int = 1024,
     max_batch_size: int = 32,
     use_int8: bool = True,
 ):
